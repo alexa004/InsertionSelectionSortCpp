@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-void countingSort(const std::vector<uint32_t>& in, std::vector<uint32_t>& out,
+void _countingSort(const std::vector<uint32_t>& in, std::vector<uint32_t>& out,
                   uint32_t k) {
   out.resize(in.size());
   std::vector<uint32_t> count(k + 1, 0);
@@ -16,13 +16,18 @@ void countingSort(const std::vector<uint32_t>& in, std::vector<uint32_t>& out,
   }
 }
 
+void countingSort(std::vector<uint32_t>& v) {
+  std::vector<uint32_t> out(v.size());
+  _countingSort(v, out, 9);
+  v = out;
+}
+
 int main() {
-  std::vector<uint32_t> in = {2, 5, 3, 0, 2, 3, 0, 3};
-  std::vector<uint32_t> out;
+  std::vector<uint32_t> v = {2, 9, 7, 6, 3, 7, 8, 6, 0, 1, 1};
 
-  countingSort(in, out, 5);
+  countingSort(v);
 
-  for (auto& i : out) std::cout << i;
+  for (auto& i : v) std::cout << i;
     std::cout << "\n";
 
   std::exit(EXIT_SUCCESS);
