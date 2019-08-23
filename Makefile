@@ -10,6 +10,9 @@ BIN_DIR=bin
 
 all: dirs $(EXE)
 
+debug: CFLAGS += -O0 -g3
+debug: all
+
 dirs: $(OBJ_DIR) $(BIN_DIR)
 
 $(OBJ_DIR):
@@ -28,4 +31,4 @@ clean:
 	rm -rf $(OBJ_DIR)
 	rm -rf $(BIN_DIR)
 
-.PHONY: all dirs clean
+.PHONY: all debug dirs clean

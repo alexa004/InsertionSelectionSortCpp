@@ -1,1 +1,1 @@
-{ BasedOnStyle: Google, ColumnLimit: 90 }
+{ BasedOnStyle: Google, ColumnLimit: 80 }
