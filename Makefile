@@ -27,6 +27,9 @@ obj/%.o: src/%.cpp
 $(EXE): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $(BIN_DIR)/$@
 
+run:	$(BIN_DIR) $(EXE)
+	$(BIN_DIR)/$(EXE)
+
 clean:
 	rm -rf $(OBJ_DIR)
 	rm -rf $(BIN_DIR)
