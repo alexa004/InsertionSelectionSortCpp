@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
   int32_t num = 0;
   fs >> num;
 
-  std::vector<int32_t> in(num, 0);
+  std::vector<int64_t> in(num, 0);
   for (auto& i : in) fs >> i;
   fs.close();
 
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 
 
   std::ofstream ofs("output.txt", std::ios::binary);
-  for (auto& i : in) ofs << (int32_t)i << "\n";
+  for (auto& i : in) ofs << (int64_t)i << "\n";
 
   ofs.close();
 
