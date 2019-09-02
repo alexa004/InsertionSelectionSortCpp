@@ -1,5 +1,5 @@
-# cppsorting
-Couting and Radix sort
+# InsertionSelectionSortCpp
+Insertion and Selection sort 
 
 # Building
 `make`
